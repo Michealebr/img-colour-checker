@@ -1,67 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" > 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="media.css" />
+
+    <script src="script.js"></script>
     <title>check img colour</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-ctn">
-        <div class="img-ctn card-style">
-            <img class="photo-svg" src="images/photo-svgrepo-com (1).svg"/>
+      <div class="img-ctn card-style">
+        <img
+          class="photo-svg"
+          id="ref-img"
+          src="images/photo-svgrepo-com (1).svg"
+        />
+      </div>
+      <div class="colour-ctn">
+        <div class="input-img card-style">
+          <p class="input-text"></p>
+          <div class="input-btn-ctn">
+            <input
+              class="input-btn-styling"
+              id="file-input"
+              type="file"
+              accept="image/*"
+            />
+            <label class="input-btn-label" for="file-input"
+              >Upload Your Image</label
+            >
+          </div>
         </div>
-        <div class="colour-ctn">
-            <div class="input-img card-style">
-                <p class="input-text"></p>
-                <div class="input-btn-ctn">
-                    
-                    <input class="input-btn-styling" id="file-input" type="file"/>
-                    <label class="input-btn-label" for="file-input">Upload Your Image</label>
-                </div>
-                
+        <div class="output-colours card-style">
+          <div class="colour-title">
+            <p>Colours</p>
+          </div>
+          <div class="colour-body-ctn">
+            <!-- first colour  -->
+            <div class="colour-row cl-1">
+              <div class="colour-box" id="colour-box1"></div>
+              <div class="colour-code-text-ctn">
+                <p class="colour-code-text" id="colour-code1"></p>
+                <img
+                  class="copy-svg"
+                  src="images/copy-duplicate-svgrepo-com.svg"
+                  alt="copy"
+                />
+              </div>
             </div>
-            <div class="output-colours card-style">
-                <div class="colour-title">
-                    <p>Colours</p>
-                </div>
-                <div class="colour-body-ctn">
-                    <!-- first colour  -->
-                    <div class="colour-row cl-1">
-                        <div class="colour-box"></div>
-                        <div class="colour-code-text">rgb(229, 231, 235)
-                            <img class="copy-svg" src="images/copy-duplicate-svgrepo-com.svg" alt="copy">
-                        </div>
-                    </div>
-                    <div class="colour-row cl-2">
-                        <div class="colour-box"></div>
-                        <div class="colour-code-text">rgb(229, 231, 235)
-                            <img class="copy-svg" src="images/copy-duplicate-svgrepo-com.svg" alt="copy">
-                        </div>
-                    </div>
-                    <div class="colour-row cl-3">
-                        <div class="colour-box"></div>
-                        <div class="colour-code-text">rgb(229, 231, 235)
-                            <img class="copy-svg" src="images/copy-duplicate-svgrepo-com.svg" alt="copy">
-                        </div>
-                    </div>
-                    <div class="colour-row cl-4">
-                        <div class="colour-box"></div>
-                        <div class="colour-code-text">rgb(229, 231, 235)
-                            <img class="copy-svg" src="images/copy-duplicate-svgrepo-com.svg" alt="copy">
-                        </div>
-                    </div>
-                    <div class="colour-row cl-5">
-                        <div class="colour-box"></div>
-                        <div class="colour-code-text">rgb(229, 231, 235)
-                            <img class="copy-svg" src="images/copy-duplicate-svgrepo-com.svg" alt="copy">
-                        </div>
-                    </div>
-                </div>
-
+            <div class="colour-row cl-2">
+              <div class="colour-box" id="colour-box2"></div>
+              <div class="colour-code-text-ctn">
+                <p class="colour-code-text" id="colour-code2"></p>
+                <img
+                  class="copy-svg"
+                  src="images/copy-duplicate-svgrepo-com.svg"
+                  alt="copy"
+                />
+              </div>
             </div>
+            <div class="colour-row cl-3">
+              <div class="colour-box" id="colour-box3"></div>
+              <div class="colour-code-text-ctn">
+                <p class="colour-code-text" id="colour-code3"></p>
+                <img
+                  class="copy-svg"
+                  src="images/copy-duplicate-svgrepo-com.svg"
+                  alt="copy"
+                />
+              </div>
+            </div>
+            <div class="colour-row cl-4">
+              <div class="colour-box" id="colour-box4"></div>
+              <div class="colour-code-text-ctn">
+                <p class="colour-code-text" id="colour-code4"></p>
+                <img
+                  class="copy-svg"
+                  src="images/copy-duplicate-svgrepo-com.svg"
+                  alt="copy"
+                />
+              </div>
+            </div>
+            <div class="colour-row cl-5">
+              <div class="colour-box" id="colour-box5"></div>
+              <div class="colour-code-text-ctn">
+                <p class="colour-code-text" id="colour-code5"></p>
+                <img
+                  class="copy-svg"
+                  src="images/copy-duplicate-svgrepo-com.svg"
+                  alt="copy"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>
