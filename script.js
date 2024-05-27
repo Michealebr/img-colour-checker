@@ -88,6 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
         colourCodes[i].innerText = "";
       }
     }
+    
+    // copying feature 
 
     const colourCodesCtn = [
       document.getElementById("cl-code-ctn1"),
