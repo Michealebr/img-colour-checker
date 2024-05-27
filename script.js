@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
         //reads file contents
         const reader = new FileReader();
         reader.readAsDataURL(file);
-        // waits until read and then function is called 
+        // waits until read and then function is called
         reader.onload = function (e) {
-            // create IMG and set it as our img from our file
+          // create IMG and set it as our img from our file
           const img = new Image();
           img.src = e.target.result;
           img.onload = function () {
@@ -31,10 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0);
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    console.log(imageData, 'lol')
     const pixels = imageData.data;
     const colourCounts = {};
-// each pixel is being represented by the RGBA 0 = R, 1 = G, 2 = B, 3 = A, 4 = R... so we increase i by 4 so we skip A and start off with R of each pixel
+    // each pixel is being represented by the RGBA 0 = R, 1 = G, 2 = B, 3 = A, 4 = R... so we increase i by 4 so we skip A and start off with R of each pixel
     for (let i = 0; i < pixels.length; i += 4) {
       let r = pixels[i];
       let g = pixels[i + 1];
@@ -52,8 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const colour = `rgb(${r},${g},${b})`;
 
-
-// if colour doesnt exist in colourCounts object we initialize it at 0 
+      // if colour doesnt exist in colourCounts object we initialize it at 0
       if (!colourCounts[colour]) {
         colourCounts[colour] = 0;
       }
@@ -61,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const sortedColours = Object.entries(colourCounts);
-    // sorts from most to least [1] stands for the index of the count of that colour  
+    // sorts from most to least [1] stands for the index of the count of that colour
     sortedColours.sort((a, b) => b[1] - a[1]);
 
     const colourBoxes = [
@@ -89,6 +87,41 @@ document.addEventListener("DOMContentLoaded", function () {
         colourBoxes[i].style.backgroundColor = "";
         colourCodes[i].innerText = "";
       }
+    }
+
+    const colourCodesCtn = [
+      document.getElementById("cl-code-ctn1"),
+      document.getElementById("cl-code-ctn2"),
+      document.getElementById("cl-code-ctn3"),
+      document.getElementById("cl-code-ctn4"),
+      document.getElementById("cl-code-ctn5"),
+    ];
+
+    colourCodesCtn.forEach((container) => {
+      const img = container.querySelector("img.copy-svg");
+      if (img) {
+        img.addEventListener("click", function () {
+          // Get the RGB value associated with this SVG
+          const rgbValue =
+            container.querySelector(".colour-code-text").innerText; // Get the text within the container
+
+          // Copy the RGB value to the clipboard
+          copyToClipboard(rgbValue);
+        });
+      }
+    });
+
+    // Function to copy text to clipboard
+    function copyToClipboard(text) {
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          // provide feedback to the user
+          alert("RGB value copied " + text);
+        })
+        .catch((err) => {
+          console.error("Failed to copy text: ", err);
+        });
     }
   }
 });

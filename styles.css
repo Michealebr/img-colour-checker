@@ -6,8 +6,6 @@
 }
 body {
   margin: 0;
-  /* max-height: max-content;
-  overflow: hidden; */
 }
 .main-ctn {
   margin: 0px auto;
@@ -125,6 +123,7 @@ body {
 
 .copy-svg {
   height: 18px;
+  cursor: pointer;
 }
 .ref-img {
   max-height: 500px;
