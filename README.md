@@ -9,7 +9,9 @@ Features
 * Copy RGB values to the clipboard with a single click.
 
 Installation 
+
 https://github.com/your-username/img-colour-checker.git
+
 Open index.html in your web browser to start the application.
 
 Usage
@@ -19,10 +21,13 @@ Usage
 4. Click on the copy icon next to any color to copy its RGB value to the clipboard.
 
 Code Structure
+
 HTML
 * index.html: The main HTML file that sets up the structure of the web page, including the file input, image display area, and color display boxes.
+
 CSS
 * styles.css: The stylesheet that defines the layout and styling of the web page elements.
+
 JavaScript
 * script.js: The main JavaScript file that contains the following functionality:
   * Image Upload and Preview: Handles the file input change event to read and display the uploaded image.
